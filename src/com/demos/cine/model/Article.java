@@ -4,7 +4,7 @@ public class Article {
 	
 	private String reference;
 	private String designation;
-	private double prixHT;
+	private Prix prixHT;
 	private int  qteStock;
 	
 	
@@ -12,7 +12,7 @@ public class Article {
 	}
 
 
-	public Article(String reference, String designation, double prix, int qtestock) {
+	public Article(String reference, String designation, Prix prix, int qtestock) {
 		this.reference = reference;
 		this.designation = designation;
 		this.prixHT = prix;
@@ -21,11 +21,11 @@ public class Article {
 
 
 	public double getPrix() {
-		return prixHT;
+		return prixHT.getPrix();
 	}
 
 
-	public void setPrix(double prix) {
+	public void setPrix(Prix prix) {
 		this.prixHT = prix;
 	}
 
