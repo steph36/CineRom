@@ -6,6 +6,7 @@ public class Article {
 	private String designation;
 	private double prixHT;
 	private int  qteStock;
+	private String type;
 	
 	
 	public Article() {
@@ -50,6 +51,17 @@ public class Article {
 
 	public void decrementStock(int val){
 		this.qteStock = this.qteStock-val;
+	}
+
+	
+
+	public String getType() {
+		return type;
+	}
+
+
+	public void setType(String type) {
+		this.type = type;
 	}
 
 
