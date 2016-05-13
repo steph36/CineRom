@@ -6,7 +6,11 @@ public class Article {
 	private String designation;
 	private double prixHT;
 	private int  qteStock;
+
 	private String type;
+
+	private boolean dematerialise;
+
 	
 	
 	public Article() {
@@ -18,8 +22,17 @@ public class Article {
 		this.designation = designation;
 		this.prixHT = prix;
 		this.qteStock = qtestock;
+		this.dematerialise = false;
 	}
-
+	
+	//objet dematerialise
+	public Article(String reference, String designation, double prix) {
+		this.reference = reference;
+		this.designation = designation;
+		this.prixHT = prix;
+		this.qteStock=0;
+		this.dematerialise = true;
+	}
 
 	public double getPrix() {
 		return prixHT;
@@ -55,6 +68,7 @@ public class Article {
 
 	
 
+
 	public String getType() {
 		return type;
 	}
@@ -65,10 +79,26 @@ public class Article {
 	}
 
 
+
+	public boolean isDematerialise() {
+		return dematerialise;
+	}
+
+
+	public void setDematerialise(boolean dematerialise) {
+		this.dematerialise = dematerialise;
+	}
+
+
 	public String toString() {
-		return "Article [reference=" + reference + ", designation=" + designation + ", prixHT=" + prixHT + ", qteStock="
-				+ qteStock + "]";
+
+		if(!isDematerialise())
+			return "reference=" + reference + ", designation=" + designation + ", prixHT=" + prixHT + ", qteStock="+ qteStock;
+		else
+			return "reference=" + reference + ", designation=" + designation + ", prixHT=" + prixHT + ", objet dematerialise";
+	
+		
 	}
 	
-	
+		
 }
